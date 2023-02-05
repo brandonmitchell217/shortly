@@ -9,6 +9,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LinkForm from "../components/LinkForm";
 import Hero from "../components/Hero";
+import Statistics from "../components/Statistics";
+import Cta from "../components/Cta";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,12 +36,16 @@ export default function Home() {
 
   return (
     <main>
-      <section className="h-screen flex flex-col justify-center items-center">
+      <section className="flex flex-col justify-center items-center">
         <Hero />
-        <div>
+        <div className="w-full px-2">
           <LinkForm onSubmit={onSubmit} />
           <div>{data ? data.result.short_link : null}</div>
         </div>
+        <div className="py-12">
+          <Statistics />
+        </div>
+        <Cta />
       </section>
     </main>
   );

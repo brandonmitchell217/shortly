@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "../styles/globals.css";
 
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Nav />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

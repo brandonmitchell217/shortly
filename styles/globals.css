@@ -8,7 +8,7 @@
     @apply box-border m-0 p-0;
   }
   body {
-    @apply text-base font-poppins text-primary2 font-medium overflow-hidden scroll-smooth;
+    @apply text-base font-poppins text-primary2 font-medium h-full overflow-x-hidden scroll-smooth;
   }
   h1,
   h2,
