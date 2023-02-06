@@ -17,10 +17,16 @@ const Nav = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
+  const navLinks = [
+    { name: "Features", href: "/features" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Resources", href: "/resources" },
+  ];
+
   return (
     <nav className="relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center">
       <div>
-        <Link href={"/"}>
+        <Link href={"/"} id="navLogo">
           <Logo />
         </Link>
       </div>
@@ -37,15 +43,11 @@ const Nav = () => {
         }`}
       >
         <ul className="flex flex-col gap-8 md:flex-row md:gap-4 text-center">
-          <li>
-            <Link href={"/features"}>Features</Link>
-          </li>
-          <li>
-            <Link href={"/pricing"}>Pricing</Link>
-          </li>
-          <li>
-            <Link href={"/resources"}>Resources</Link>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link href={link.href}>{link.name}</Link>
+            </li>
+          ))}
         </ul>
         <div className="w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2">
           <Link href={"/"} className="py-2 w-full text-center">
@@ -63,15 +65,11 @@ const Nav = () => {
         className={`w-full md:flex justify-between items-center pl-8 hidden`}
       >
         <ul className="flex flex-row md:gap-8">
-          <li>
-            <Link href={"/features"}>Features</Link>
-          </li>
-          <li>
-            <Link href={"/pricing"}>Pricing</Link>
-          </li>
-          <li>
-            <Link href={"/resources"}>Resources</Link>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link href={link.href}>{link.name}</Link>
+            </li>
+          ))}
         </ul>
         <div className="flex gap-4">
           <Link href={"/"} className="py-2 px-6 text-center">

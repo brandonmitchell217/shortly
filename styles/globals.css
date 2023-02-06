@@ -19,6 +19,18 @@
     @apply font-bold leading-none;
   }
 }
+
+@layer components {
+  a:not(#footLogo a, #navLogo a),
+  :is(li):has(a),
+  button.bg-primary1 {
+    @apply hover:scale-105 transition-all;
+  }
+  a.bg-primary1,
+  button.bg-primary1 {
+    @apply hover:text-primary2;
+  }
+}
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
