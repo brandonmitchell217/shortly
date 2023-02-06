@@ -17,6 +17,12 @@ module.exports = {
     fontSize: {
       base: "18px",
     },
+    backgroundImage: {
+      shortMobile: "url('/assets/bg-shorten-mobile.svg')",
+      shortDesktop: "url('/assets/bg-shorten-desktop.svg')",
+      boostMobile: "url('/assets/bg-boost-mobile.svg')",
+      boostDesktop: "url('/assets/bg-boost-desktop.svg')",
+    },
     extend: {
       colors: {
         primary1: "hsl(180, 66%, 49%)",

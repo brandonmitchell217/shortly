@@ -38,11 +38,11 @@ export default function Home() {
     <main>
       <section className="flex flex-col justify-center items-center">
         <Hero />
-        <div className="w-full px-2">
+        <div className="relative z-10 w-full px-2">
           <LinkForm onSubmit={onSubmit} />
           <div>{data ? data.result.short_link : null}</div>
         </div>
-        <div className="py-12">
+        <div className="pt-36 pb-16 -mt-16 bg-neutral-200">
           <Statistics />
         </div>
         <Cta />

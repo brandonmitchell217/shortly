@@ -19,7 +19,7 @@ const Nav = () => {
   }, [isOpen]);
 
   return (
-    <nav className="relative py-8 px-4 flex justify-between items-center">
+    <nav className="relative z-50 py-8 px-4 flex justify-between items-center">
       <div>
         <Link href={"/"}>
           <Image

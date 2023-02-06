@@ -35,17 +35,17 @@ const Statistics = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="relative flex flex-col justify-center items-center gap-6 border pt-14 pb-6 bg-white"
+            className="relative flex flex-col justify-center items-center gap-6 border pt-16 pb-6 bg-white rounded"
           >
             <div className="w-20 h-20 bg-primary2 rounded-full absolute -top-10 flex items-center justify-center">
               <Image src={stat.icon} alt={stat.title} height={45} width={45} />
             </div>
             <div className="space-y-4 px-4">
               <h3>{stat.title}</h3>
-              <p className="text-[15px] text-neutral2">{stat.description}</p>
+              <p className="text-[14px] text-neutral2">{stat.description}</p>
             </div>
             <div
-              className={`absolute -bottom-12 left-1/2 -translate-x-1/2 -z-10 bg-primary1 w-2 h-12 ${
+              className={`absolute -bottom-12 left-1/2 -translate-x-1/2 z-0 bg-primary1 w-2 h-12 ${
                 index === 2 && "hidden"
               }`}
             ></div>

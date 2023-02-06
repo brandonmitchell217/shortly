@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col gap-4 lg:flex-row pb-16 lg:py-32">
+    <div className="flex flex-col gap-8 lg:flex-row pb-16 lg:py-32">
       <div className="relative w-full overflow-x-hidden">
         <Image
           src={"/assets/illustration-working.svg"}
@@ -22,7 +22,7 @@ const Hero = () => {
         </p>
         <Link
           href="#"
-          className="w-max mt-2 py-3 px-10 rounded-full bg-primary1 text-white"
+          className="w-max mt-2 py-3 px-10 rounded-full bg-primary1 text-white text-[15px]"
         >
           Get Started
         </Link>

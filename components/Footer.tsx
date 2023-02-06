@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   FaFacebook,
   FaInstagram,
@@ -8,9 +10,16 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-1 place-items-center gap-2 mt-40 py-8">
+    <footer className="bg-neutral4 text-white grid grid-cols-1 place-items-center gap-2 py-8">
       <div>
-        <h2>Shortly</h2>
+        <Link href={"/"}>
+          <Image
+            src={"/assets/logo.svg"}
+            alt="Shortly logo"
+            width={120}
+            height={80}
+          />
+        </Link>
       </div>
       <div className="py-8 flex flex-col gap-8">
         <div className="flex flex-col gap-6">
@@ -40,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <ul className="flex gap-2">
+        <ul className="flex gap-4 text-[22px]">
           <li>
             <FaFacebook />
           </li>
