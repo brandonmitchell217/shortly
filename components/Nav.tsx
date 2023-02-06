@@ -32,7 +32,7 @@ const Nav = () => {
         />
       </div>
       <div
-        className={`absolute -bottom-[350px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8 ${
+        className={`absolute -bottom-[365px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8 ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -48,7 +48,9 @@ const Nav = () => {
           </li>
         </ul>
         <div className="w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2">
-          <Link href={"/"}>Login</Link>
+          <Link href={"/"} className="py-2 w-full text-center">
+            Login
+          </Link>
           <Link
             href={"/"}
             className="py-2 bg-primary1 w-full text-center rounded-full"
