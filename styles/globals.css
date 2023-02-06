@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +8,7 @@
     @apply box-border m-0 p-0;
   }
   body {
-    @apply text-base font-poppins text-primary2 font-medium h-full overflow-x-hidden scroll-smooth;
+    @apply text-base font-poppins font-medium text-primary2 font-medium h-full overflow-x-hidden scroll-smooth;
   }
   h1,
   h2,

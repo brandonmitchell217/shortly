@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import React from "react";
-import { useIsomorphicLayoutEffect, useMediaQuery } from "usehooks-ts";
+import { useIsomorphicLayoutEffect } from "usehooks-ts";
+import { Logo } from "./assets/Logo";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const matches = useMediaQuery("(min-width: 768px)");
 
   useIsomorphicLayoutEffect(() => {
     const handleResize = () => {
@@ -22,27 +21,22 @@ const Nav = () => {
     <nav className="relative z-50 py-8 px-4 flex justify-between items-center">
       <div>
         <Link href={"/"}>
-          <Image
-            src={"/assets/logo.svg"}
-            alt="Shortly logo"
-            width={120}
-            height={80}
-          />
+          <Logo />
         </Link>
       </div>
       <div>
         <FaBars
           size={"28px"}
-          className={`text-neutral2 ${matches ? "hidden" : "block"}`}
+          className={`text-neutral2 md:hidden`}
           onClick={() => setIsOpen(!isOpen)}
         />
       </div>
       <div
-        className={`absolute -bottom-40 right-8 border-2 flex flex-col md:flex-row ${
+        className={`absolute -bottom-[350px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8 ${
           isOpen ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-8 md:flex-row md:gap-4">
+        <ul className="flex flex-col gap-8 md:flex-row md:gap-4 text-center">
           <li>
             <Link href={"/features"}>Features</Link>
           </li>
@@ -53,14 +47,17 @@ const Nav = () => {
             <Link href={"/resources"}>Resources</Link>
           </li>
         </ul>
-        <div className="flex gap-4">
-          <Link href={"/login"}>Login</Link>
-          <Link href={"/signup"}>Sign Up</Link>
+        <div className="w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2">
+          <Link href={"/"}>Login</Link>
+          <Link
+            href={"/"}
+            className="py-2 bg-primary1 w-full text-center rounded-full"
+          >
+            Sign Up
+          </Link>
         </div>
       </div>
-      <div
-        className={`w-full justify-between pl-8 ${matches ? "flex" : "hidden"}`}
-      >
+      <div className={`w-full justify-between pl-8 hidden md:flex`}>
         <ul className="flex flex-row md:gap-4">
           <li>
             <Link href={"/features"}>Features</Link>
