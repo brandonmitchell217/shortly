@@ -1,10 +1,4 @@
-import React, {
-  HTMLAttributes,
-  HtmlHTMLAttributes,
-  MutableRefObject,
-} from "react";
-
-import { Title } from "../components/Title";
+import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LinkForm from "../components/LinkForm";
@@ -36,7 +30,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex flex-col justify-center items-center">
+      <section>
         <Hero />
         <div className="relative z-10 w-full px-2">
           <LinkForm onSubmit={onSubmit} />
