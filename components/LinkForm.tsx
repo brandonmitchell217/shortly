@@ -5,16 +5,16 @@ const LinkForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative flex flex-col gap-3 p-6 rounded-xl bg-primary2 bg-shortMobile bg-no-repeat bg-right-top md:flex-row md:px-12 md:bg-shortDesktop md:bg-cover"
+      className="relative flex flex-col gap-3 p-6 rounded-xl bg-primary2 bg-shortMobile bg-no-repeat bg-right-top md:flex-row md:p-12 md:bg-shortDesktop md:bg-cover max-w-6xl m-auto"
     >
       <input
-        className="p-3 rounded-md text-[14px] md:flex-1"
+        className="p-3 rounded-md text-sm md:flex-1 lg:text-base"
         type="text"
         placeholder="Shorten a link here..."
       />
       <button
         type="submit"
-        className="bg-primary1 text-white rounded-md py-2 text-[15px] md:px-8"
+        className="py-2 md:px-8 bg-primary1 text-white rounded-md text-md lg:text-lg "
       >
         Shorten it!
       </button>

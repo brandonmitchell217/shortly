@@ -23,21 +23,23 @@ const Statistics = () => {
     },
   ];
   return (
-    <div className="text-center">
+    <div className="text-center max-w-6xl m-auto">
       <div className="space-y-3 mb-16">
-        <h2 className="text-[22px]">Advanced Statistics</h2>
-        <p className="text-[15px] text-neutral2">
+        <h2 className="text-lg lg:text-title">Advanced Statistics</h2>
+        <p className="text-md lg:text-base lg:w-1/2 lg:m-auto text-neutral2">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
       </div>
-      <div className="w-full px-3 grid grid-col-1 gap-20 lg:grid-cols-3">
+      <div className="w-full px-3 flex flex-col md:flex-row gap-16 md:gap-8">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="relative flex flex-col justify-center items-center gap-6 border pt-16 pb-6 bg-white rounded"
+            className={`relative flex flex-col justify-center items-center lg:items-start lg:justify-start lg:text-left gap-6 md:w-1/3 h-64 border pt-16 pb-6 bg-white rounded  shadow-lg lg:shadow-xl ${
+              index === 1 && "md:mt-12"
+            } ${index === 2 && "md:mt-24"}`}
           >
-            <div className="w-20 h-20 bg-primary2 rounded-full absolute -top-10 flex items-center justify-center">
+            <div className="w-20 h-20 bg-primary2 rounded-full absolute -top-10 lg:left-6 flex items-center justify-center">
               <Image src={stat.icon} alt={stat.title} height={45} width={45} />
             </div>
             <div className="space-y-4 px-4">
@@ -47,7 +49,7 @@ const Statistics = () => {
             <div
               className={`absolute -bottom-12 left-1/2 -translate-x-1/2 z-0 bg-primary1 w-2 h-12 ${
                 index === 2 && "hidden"
-              }`}
+              } md:h-2 md:w-12 md:bottom-1/2 md:-translate-y-1/2 md:translate-x-0 md:left-full`}
             ></div>
           </div>
         ))}

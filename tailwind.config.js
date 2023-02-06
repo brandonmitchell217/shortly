@@ -15,7 +15,12 @@ module.exports = {
       poppins: ["Poppins"],
     },
     fontSize: {
+      sm: "14px",
+      md: "15px",
       base: "18px",
+      lg: "22px",
+      title: ["34px", "1.09"],
+      titleLg: ["72px", "1.09"],
     },
     backgroundImage: {
       shortMobile: "url('/assets/bg-shorten-mobile.svg')",

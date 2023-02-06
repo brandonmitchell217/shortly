@@ -18,7 +18,7 @@ const Nav = () => {
   }, [isOpen]);
 
   return (
-    <nav className="relative z-50 py-8 px-4 flex justify-between items-center">
+    <nav className="relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center">
       <div>
         <Link href={"/"}>
           <Logo />
@@ -59,8 +59,10 @@ const Nav = () => {
           </Link>
         </div>
       </div>
-      <div className={`w-full justify-between pl-8 hidden md:flex`}>
-        <ul className="flex flex-row md:gap-4">
+      <div
+        className={`w-full md:flex justify-between items-center pl-8 hidden`}
+      >
+        <ul className="flex flex-row md:gap-8">
           <li>
             <Link href={"/features"}>Features</Link>
           </li>
@@ -72,8 +74,15 @@ const Nav = () => {
           </li>
         </ul>
         <div className="flex gap-4">
-          <Link href={"/login"}>Login</Link>
-          <Link href={"/signup"}>Sign Up</Link>
+          <Link href={"/"} className="py-2 px-6 text-center">
+            Login
+          </Link>
+          <Link
+            href={"/"}
+            className="py-2 px-6 bg-primary1 text-white rounded-full"
+          >
+            Sign Up
+          </Link>
         </div>
       </div>
     </nav>

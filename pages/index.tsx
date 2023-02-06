@@ -42,7 +42,7 @@ export default function Home() {
           <LinkForm onSubmit={onSubmit} />
           <div>{data ? data.result.short_link : null}</div>
         </div>
-        <div className="pt-36 pb-16 -mt-16 bg-neutral-200">
+        <div className="w-full pt-36 pb-16 -mt-16 bg-neutral-200">
           <Statistics />
         </div>
         <Cta />

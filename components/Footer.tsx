@@ -11,13 +11,13 @@ import { Logo } from "./assets/Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral4 text-white grid grid-cols-1 place-items-center text-center gap-4 py-12">
-      <div>
+    <footer className="bg-neutral4 text-white grid grid-cols-1 lg:grid-cols-3 place-items-center text-center lg:place-items-stretch lg:text-left gap-4 py-12">
+      <div className="lg:flex lg:justify-center">
         <Link href={"/"}>
           <Logo color="#ffffff" />
         </Link>
       </div>
-      <div className="py-8 flex flex-col gap-8">
+      <div className="py-8 flex flex-col lg:flex-row lg:py-0 gap-8 lg:gap-20">
         <div className="flex flex-col gap-6">
           <h3>Features</h3>
           <ul className="flex flex-col gap-4 font-extralight">
@@ -44,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div>
+      <div className="lg:flex lg:justify-start lg:pl-12">
         <ul className="flex gap-6 text-[22px]">
           <li>
             <FaFacebook />
