@@ -5,9 +5,11 @@ import LinkForm from "../components/LinkForm";
 import Hero from "../components/Hero";
 import Statistics from "../components/Statistics";
 import Cta from "../components/Cta";
+import { useRouter } from "next/router";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
+  const router = useRouter();
   const targetSection = React.useRef(null);
   const [data, setData] = React.useState(null);
 
@@ -26,6 +28,7 @@ export default function Home() {
     const link = await getData(url);
 
     setData(link);
+    return router.push(`/link/${link}`);
   };
 
   return (
