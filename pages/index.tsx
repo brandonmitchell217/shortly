@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LinkForm from "../components/LinkForm";
@@ -6,12 +6,14 @@ import Hero from "../components/Hero";
 import Statistics from "../components/Statistics";
 import Cta from "../components/Cta";
 import { useRouter } from "next/router";
+import { Shortly } from "../components/Shortly";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
   const router = useRouter();
   const targetSection = React.useRef(null);
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState([]);
+  let linkId = 0;
 
   async function getData(url: string) {
     const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
@@ -26,10 +28,15 @@ export default function Home() {
     e.preventDefault();
     const url = e.target[0].value;
     const link = await getData(url);
-
-    setData(link);
-    return router.push(`/link/${link}`);
+    // console.log(data);
+    setData([...data, { id: linkId++, ...link.result }]);
   };
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+  // const handleClick = (e: React.SyntheticEvent) => {};
 
   return (
     <main>
@@ -37,9 +44,22 @@ export default function Home() {
         <Hero />
         <div className="relative z-10 w-full px-2">
           <LinkForm onSubmit={onSubmit} />
-          <div>{data ? data.result.short_link : null}</div>
         </div>
-        <div className="w-full pt-36 pb-16 -mt-16 bg-neutral-200">
+        <div className="relative w-full pt-36 pb-16 -mt-16 bg-neutral-200">
+          {data.length > 0 && (
+            <div className="flex flex-col gap-4 max-w-6xl m-auto px-4 mb-28">
+              {data.map((link) => {
+                return (
+                  <Shortly
+                    key={link.id}
+                    original_link={link.original_link}
+                    short_link={link.short_link}
+                  />
+                );
+              })}
+            </div>
+          )}
+
           <Statistics />
         </div>
         <Cta />
