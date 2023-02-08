@@ -44,10 +44,15 @@ export const Shortly = ({ original_link, short_link }: ShortlyProps) => {
             href={short_link}
             target="_blank"
             className="text-primary1 font-bold shortly"
+            aria-label="Shortened Link"
           >
             {short_link}
           </Link>
-          <button className={ButtonStyles} onClick={handleClick}>
+          <button
+            className={ButtonStyles}
+            onClick={handleClick}
+            aria-label="Copy button"
+          >
             {copy ? "Copied!" : "Copy"}
           </button>
         </div>

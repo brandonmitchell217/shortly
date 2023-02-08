@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <footer className={FooterStyles}>
       <div id="footLogo" className="lg:flex lg:justify-center">
-        <Link href={"/"}>
+        <Link href={"/"} aria-label="Shortly logo">
           <Logo color="#ffffff" />
         </Link>
       </div>
@@ -65,7 +65,11 @@ const Footer = () => {
             <ul className={LinksList}>
               {link.links.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href} onClick={onClickFake}>
+                  <Link
+                    href={link.href}
+                    onClick={onClickFake}
+                    aria-label={`${link.name} link`}
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -78,7 +82,11 @@ const Footer = () => {
         <ul className="flex gap-6 text-lg">
           {socialLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href} onClick={onClickFake}>
+              <Link
+                href={link.href}
+                onClick={onClickFake}
+                aria-label={`${link.name} icon link`}
+              >
                 {link.icon}
               </Link>
             </li>

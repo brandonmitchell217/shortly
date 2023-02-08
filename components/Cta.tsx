@@ -23,7 +23,12 @@ const Cta = () => {
     <div className={ContainerStyles}>
       <div className={InnerStyles}>
         <h2 className="text-lg lg:text-title">{ctaText.title}</h2>
-        <Link href="/" className={ButtonStyles} onClick={onClickFake}>
+        <Link
+          href="/"
+          className={ButtonStyles}
+          onClick={onClickFake}
+          aria-label={`${ctaText.cta} link`}
+        >
           {ctaText.cta}
         </Link>
       </div>

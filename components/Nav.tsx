@@ -37,22 +37,27 @@ const Nav = () => {
   return (
     <nav className={NavStyles}>
       <div>
-        <Link href={"/"} id="navLogo">
+        <Link href={"/"} id="navLogo" aria-label="Shortly Logo link">
           <Logo />
         </Link>
       </div>
       <div>
         <FaBars
           size={"28px"}
-          className={`text-neutral2 md:hidden`}
+          className={`text-neutral2 md:hidden cursor-pointer hover:text-primary2 transition-colors ${
+            isOpen && "text-primary2"
+          }`}
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Mobile Menu Button"
         />
       </div>
       <div className={`${MobileNavStyles} ${isOpen ? "block" : "hidden"}`}>
         <ul className={MobileMenuStyles}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href}>{link.name}</Link>
+              <Link href={link.href} aria-label={`${link.name} page link`}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -61,6 +66,7 @@ const Nav = () => {
             href={"/"}
             className="py-2 w-full text-center"
             onClick={onClickFake}
+            aria-label="Login"
           >
             Login
           </Link>
@@ -68,6 +74,7 @@ const Nav = () => {
             href={"/"}
             className="py-2 bg-primary1 w-full text-center rounded-full"
             onClick={onClickFake}
+            aria-label="Sign Up"
           >
             Sign Up
           </Link>
@@ -77,7 +84,9 @@ const Nav = () => {
         <ul className="flex flex-row md:gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href}>{link.name}</Link>
+              <Link href={link.href} aria-label={`${link.name} page link`}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -86,6 +95,7 @@ const Nav = () => {
             href={"/"}
             className="py-2 px-6 text-center"
             onClick={onClickFake}
+            aria-label="Login"
           >
             Login
           </Link>
@@ -93,6 +103,7 @@ const Nav = () => {
             href={"/"}
             className="py-2 px-6 bg-primary1 text-white rounded-full"
             onClick={onClickFake}
+            aria-label="Sign Up"
           >
             Sign Up
           </Link>

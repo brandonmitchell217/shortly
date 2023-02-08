@@ -49,7 +49,12 @@ const Hero = () => {
       <div className={TextContainerStyles}>
         <h1 className={TitleStyles}>{HeroText.title}</h1>
         <p className={DescriptionStyles}>{HeroText.description}</p>
-        <Link href="/" className={ButtonStyles} onClick={onClickFake}>
+        <Link
+          href="/"
+          className={ButtonStyles}
+          onClick={onClickFake}
+          aria-label="Get Started"
+        >
           {HeroText.cta}
         </Link>
       </div>

@@ -47,7 +47,7 @@ const FormLink = ({ onSubmit }) => {
           </span>
         ) : null}
       </div>
-      <button type="submit" className={ButtonStyles}>
+      <button type="submit" aria-label="Submit" className={ButtonStyles}>
         {LinkText.button}
       </button>
     </form>
