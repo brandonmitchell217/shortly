@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import onClickFake from "../util/FakeClick";
 import React from "react";
+import { Button } from "./Button";
 
 interface HeroProps {
   title: string;
@@ -17,7 +18,7 @@ const HeroText: HeroProps = {
 };
 
 const HeroContainerStyles =
-  "w-full max-w-6xl pb-16 lg:py-36 flex flex-col gap-8 items-center lg:flex-row-reverse lg:justify-start";
+  "w-full max-w-6xl pb-16 lg:py-36 lg:px-6 xl:px-0 flex flex-col gap-8 items-center lg:flex-row-reverse lg:justify-start";
 
 const ImageContainerStyles =
   "relative overflow-x-hidden flex-1 lg:absolute lg:-right-[120px]";
@@ -30,9 +31,6 @@ const TextContainerStyles =
 const TitleStyles = "text-title lg:text-titleLg lg:w-1/2";
 
 const DescriptionStyles = "text-neutral2 text-sm lg:text-base lg:w-2/5";
-
-const ButtonStyles =
-  "w-max mt-2 py-3 px-10 rounded-full bg-primary1 text-white text-md lg:text-lg";
 
 const Hero = () => {
   return (
@@ -49,14 +47,9 @@ const Hero = () => {
       <div className={TextContainerStyles}>
         <h1 className={TitleStyles}>{HeroText.title}</h1>
         <p className={DescriptionStyles}>{HeroText.description}</p>
-        <Link
-          href="/"
-          className={ButtonStyles}
-          onClick={onClickFake}
-          aria-label="Get Started"
-        >
+        <Button type="link" style="rounded-full" onClick={onClickFake}>
           {HeroText.cta}
-        </Link>
+        </Button>
       </div>
     </div>
   );

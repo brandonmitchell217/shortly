@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Button } from "./Button";
 
 const LinkText: { placeholder: string; button: string } = {
   placeholder: "Shorten a link here...",
@@ -47,9 +48,9 @@ const FormLink = ({ onSubmit }) => {
           </span>
         ) : null}
       </div>
-      <button type="submit" aria-label="Submit" className={ButtonStyles}>
+      <Button type="submit" style="rounded">
         {LinkText.button}
-      </button>
+      </Button>
     </form>
   );
 };

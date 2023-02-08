@@ -4,6 +4,7 @@ import React from "react";
 import { useIsomorphicLayoutEffect } from "usehooks-ts";
 import { Logo } from "./assets/Logo";
 import onClickFake from "../util/FakeClick";
+import { Button } from "./Button";
 
 const NavStyles =
   "relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center";
@@ -55,58 +56,64 @@ const Nav = () => {
         <ul className={MobileMenuStyles}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href} aria-label={`${link.name} page link`}>
+              <Button
+                type="link"
+                style="no-bg"
+                className={"text-md"}
+                href={link.href}
+              >
                 {link.name}
-              </Link>
+              </Button>
             </li>
           ))}
         </ul>
         <div className={MobileButtonContainerStyles}>
-          <Link
-            href={"/"}
-            className="py-2 w-full text-center"
-            onClick={onClickFake}
-            aria-label="Login"
-          >
+          <Button type="link" style="no-bg" onClick={onClickFake}>
             Login
-          </Link>
-          <Link
-            href={"/"}
-            className="py-2 bg-primary1 w-full text-center rounded-full"
+          </Button>
+          <Button
+            type="link"
+            style="rounded-full"
+            className={"w-full text-md"}
             onClick={onClickFake}
-            aria-label="Sign Up"
           >
             Sign Up
-          </Link>
+          </Button>
         </div>
       </div>
+
       <div className={DesktopNavStyles}>
         <ul className="flex flex-row md:gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href} aria-label={`${link.name} page link`}>
+              <Button
+                type="link"
+                style="no-bg"
+                className={"lg:text-base"}
+                href={link.href}
+              >
                 {link.name}
-              </Link>
+              </Button>
             </li>
           ))}
         </ul>
         <div className="flex gap-4">
-          <Link
-            href={"/"}
-            className="py-2 px-6 text-center"
+          <Button
+            type="link"
+            style="no-bg"
+            className={"px-8 text-center lg:text-base w-auto"}
             onClick={onClickFake}
-            aria-label="Login"
           >
             Login
-          </Link>
-          <Link
-            href={"/"}
-            className="py-2 px-6 bg-primary1 text-white rounded-full"
+          </Button>
+          <Button
+            type="link"
+            style="rounded-full"
+            className={"px-8 mt-0 lg:text-base"}
             onClick={onClickFake}
-            aria-label="Sign Up"
           >
             Sign Up
-          </Link>
+          </Button>
         </div>
       </div>
     </nav>
