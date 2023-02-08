@@ -1,12 +1,8 @@
 import React from "react";
+import { BlankPage } from "../components/BlankPage";
 
 const features = () => {
-  return (
-    <section className="h-screen">
-      <h1>Features Page</h1>
-      <p>Sorry, this page is blank. 🥲</p>
-    </section>
-  );
+  return <BlankPage page={"Features"} />;
 };
 
 export default features;

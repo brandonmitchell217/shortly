@@ -1,12 +1,8 @@
 import React from "react";
+import { BlankPage } from "../components/BlankPage";
 
 const resources = () => {
-  return (
-    <section className="h-screen">
-      <h1>Resources Page</h1>
-      <p>Sorry, this page is blank. 🥲</p>
-    </section>
-  );
+  return <BlankPage page={"Resources"} />;
 };
 
 export default resources;

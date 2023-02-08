@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface ShortlyProps {
@@ -39,7 +40,13 @@ export const Shortly = ({ original_link, short_link }: ShortlyProps) => {
       </div>
       <div className={LinkContainerStyles}>
         <div className={LinkInnerContainerStyles}>
-          <h3 className="text-primary1">{short_link}</h3>
+          <Link
+            href={short_link}
+            target="_blank"
+            className="text-primary1 font-bold shortly"
+          >
+            {short_link}
+          </Link>
           <button className={ButtonStyles} onClick={handleClick}>
             {copy ? "Copied!" : "Copy"}
           </button>

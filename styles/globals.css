@@ -24,8 +24,8 @@
 }
 
 @layer components {
-  a:not(#footLogo a, #navLogo a),
-  :is(li):has(a),
+  a:not(#footLogo a, #navLogo a, a.shortly),
+  :is(li):has(a.bg-primary1),
   button.bg-primary1 {
     @apply hover:scale-105 transition-all;
   }

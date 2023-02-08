@@ -1,12 +1,8 @@
 import React from "react";
+import { BlankPage } from "../components/BlankPage";
 
 const pricing = () => {
-  return (
-    <section className="h-screen">
-      <h1>Pricing Page</h1>
-      <p>Sorry, this page is blank. 🥲</p>
-    </section>
-  );
+  return <BlankPage page={"Pricing"} />;
 };
 
 export default pricing;

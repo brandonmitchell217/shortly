@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
 import {
   FaFacebook,
@@ -8,6 +7,14 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { Logo } from "./assets/Logo";
+import onClickFake from "../util/FakeClick";
+
+const FooterStyles =
+  "bg-neutral4 text-white grid grid-cols-1 lg:grid-cols-3 place-items-center text-center lg:place-items-stretch lg:text-left gap-4 py-12 lg:py-20";
+
+const LinksContainer = "py-8 flex flex-col lg:flex-row lg:py-0 gap-8 lg:gap-20";
+
+const LinksList = "flex flex-col gap-4 font-extralight text-md lg:text-base";
 
 const links: { name: string; links: { name: string; href: string }[] }[] = [
   {
@@ -36,7 +43,7 @@ const links: { name: string; links: { name: string; href: string }[] }[] = [
     ],
   },
 ];
-const socialLinks: { name: string; href: string; icon: ReactNode }[] = [
+const socialLinks: { name: string; href: string; icon: React.ReactNode }[] = [
   { name: "Facebook", href: "/", icon: <FaFacebook /> },
   { name: "Twitter", href: "/", icon: <FaTwitter /> },
   { name: "Pinterest", href: "/", icon: <FaPinterest /> },
@@ -45,20 +52,22 @@ const socialLinks: { name: string; href: string; icon: ReactNode }[] = [
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral4 text-white grid grid-cols-1 lg:grid-cols-3 place-items-center text-center lg:place-items-stretch lg:text-left gap-4 py-12 lg:py-20">
+    <footer className={FooterStyles}>
       <div id="footLogo" className="lg:flex lg:justify-center">
         <Link href={"/"}>
           <Logo color="#ffffff" />
         </Link>
       </div>
-      <div className="py-8 flex flex-col lg:flex-row lg:py-0 gap-8 lg:gap-20">
+      <div className={LinksContainer}>
         {links.map((link, index) => (
           <div className="flex flex-col gap-6" key={index}>
             <h3 className="text-base">{link.name}</h3>
-            <ul className="flex flex-col gap-4 font-extralight text-md lg:text-base">
+            <ul className={LinksList}>
               {link.links.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href}>{link.name}</Link>
+                  <Link href={link.href} onClick={onClickFake}>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -69,7 +78,9 @@ const Footer = () => {
         <ul className="flex gap-6 text-lg">
           {socialLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href}>{link.icon}</Link>
+              <Link href={link.href} onClick={onClickFake}>
+                {link.icon}
+              </Link>
             </li>
           ))}
         </ul>
