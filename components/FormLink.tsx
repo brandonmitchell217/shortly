@@ -22,8 +22,8 @@ const FormLink = ({ onSubmit }) => {
     },
     validationSchema: Yup.object({
       url: Yup.string()
-        .min(10, "Must be 10 or more characters")
-        .required("Required"),
+        .min(5, "Must be at least 5 characters")
+        .required("Please add a link"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
