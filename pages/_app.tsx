@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import { Main } from "../layouts/Main";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <Component {...pageProps} />
+      <Main>
+        <Component {...pageProps} />
+      </Main>
       <Footer />
     </>
   );

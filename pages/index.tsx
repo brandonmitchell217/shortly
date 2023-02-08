@@ -32,31 +32,29 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <section>
-        <Hero />
-        <div className="relative z-10 w-full px-2">
-          <FormLink onSubmit={onSubmit} />
-        </div>
-        <div className="relative w-full pt-36 pb-16 -mt-16 bg-neutral-200">
-          {data.length > 0 && (
-            <div className="flex flex-col gap-4 max-w-6xl m-auto px-4 mb-28">
-              {data.map((link) => {
-                return (
-                  <Shortly
-                    key={link.id}
-                    original_link={link.original_link}
-                    short_link={link.short_link}
-                  />
-                );
-              })}
-            </div>
-          )}
+    <section>
+      <Hero />
+      <div className="relative z-10 w-full px-2">
+        <FormLink onSubmit={onSubmit} />
+      </div>
+      <div className="relative w-full pt-36 pb-16 -mt-16 bg-neutral-200">
+        {data.length > 0 && (
+          <div className="flex flex-col gap-4 max-w-6xl m-auto px-4 mb-28">
+            {data.map((link) => {
+              return (
+                <Shortly
+                  key={link.id}
+                  original_link={link.original_link}
+                  short_link={link.short_link}
+                />
+              );
+            })}
+          </div>
+        )}
 
-          <Statistics />
-        </div>
-        <Cta />
-      </section>
-    </main>
+        <Statistics />
+      </div>
+      <Cta />
+    </section>
   );
 }
