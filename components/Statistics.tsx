@@ -27,7 +27,7 @@ const stats: { title: string; description: string; icon: string }[] = [
 ];
 
 const ContainerStyles = "max-w-6xl m-auto lg:py-12 text-center";
-const HeaderStyles = "px-4 lg: px-0 space-y-3 mb-20";
+const HeaderStyles = "px-4 lg:px-0 space-y-3 mb-20";
 const TitleStyles = "text-lg lg:text-title";
 const DescriptionStyles =
   "text-md lg:text-base lg:w-1/2 lg:m-auto text-neutral2";
