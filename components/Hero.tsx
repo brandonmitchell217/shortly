@@ -24,8 +24,9 @@ const ImageContainerStyles =
 
 const ImageStyles = "ml-12 lg:ml-0";
 
+// TO-DO: Add padding to mobile
 const TextContainerStyles =
-  "flex-1 text-center lg:text-left flex flex-col items-center gap-2 lg:items-start";
+  "px-4 lg:px-0 flex-1 text-center lg:text-left flex flex-col items-center gap-2 lg:items-start";
 
 const TitleStyles = "text-title lg:text-titleLg lg:w-1/2";
 
