@@ -26,17 +26,10 @@ export default function Home() {
 
   const onSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const url = e.target[0].value;
+    let url = e.target[0].value;
     const link = await getData(url);
-    // console.log(data);
     setData([...data, { id: linkId++, ...link.result }]);
   };
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
-  // const handleClick = (e: React.SyntheticEvent) => {};
 
   return (
     <main>

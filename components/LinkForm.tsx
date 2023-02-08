@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const LinkText: { placeholder: string; button: string } = {
@@ -6,21 +5,23 @@ const LinkText: { placeholder: string; button: string } = {
   button: "Shorten it!",
 };
 
+const FormStyles =
+  "relative max-w-6xl m-auto flex flex-col gap-3 p-6 rounded-xl bg-primary2 bg-shortMobile bg-no-repeat bg-right-top md:flex-row md:p-12 md:bg-shortDesktop md:bg-cover";
+
+const InputStyles = "p-3 rounded-md text-sm md:flex-1 lg:text-base";
+
+const ButtonStyles =
+  "py-2 md:px-8 bg-primary1 text-white rounded-md text-md lg:text-lg";
+
 const LinkForm = ({ onSubmit }) => {
   return (
-    <form
-      onSubmit={onSubmit}
-      className="relative flex flex-col gap-3 p-6 rounded-xl bg-primary2 bg-shortMobile bg-no-repeat bg-right-top md:flex-row md:p-12 md:bg-shortDesktop md:bg-cover max-w-6xl m-auto"
-    >
+    <form onSubmit={onSubmit} className={FormStyles}>
       <input
-        className="p-3 rounded-md text-sm md:flex-1 lg:text-base"
+        className={InputStyles}
         type="text"
         placeholder={LinkText.placeholder}
       />
-      <button
-        type="submit"
-        className="py-2 md:px-8 bg-primary1 text-white rounded-md text-md lg:text-lg "
-      >
+      <button type="submit" className={ButtonStyles}>
         {LinkText.button}
       </button>
     </form>

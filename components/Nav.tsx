@@ -3,6 +3,17 @@ import { FaBars } from "react-icons/fa";
 import React from "react";
 import { useIsomorphicLayoutEffect } from "usehooks-ts";
 import { Logo } from "./assets/Logo";
+import onClickFake from "../util/FakeClick";
+
+const NavStyles =
+  "relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center";
+const MobileNavStyles =
+  "absolute -bottom-[365px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8";
+const DesktopNavStyles =
+  "w-full md:flex justify-between items-center pl-8 hidden";
+const MobileMenuStyles = "flex flex-col gap-8 md:flex-row md:gap-4 text-center";
+const MobileButtonContainerStyles =
+  "w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -24,7 +35,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center">
+    <nav className={NavStyles}>
       <div>
         <Link href={"/"} id="navLogo">
           <Logo />
@@ -37,33 +48,32 @@ const Nav = () => {
           onClick={() => setIsOpen(!isOpen)}
         />
       </div>
-      <div
-        className={`absolute -bottom-[365px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8 ${
-          isOpen ? "block" : "hidden"
-        }`}
-      >
-        <ul className="flex flex-col gap-8 md:flex-row md:gap-4 text-center">
+      <div className={`${MobileNavStyles} ${isOpen ? "block" : "hidden"}`}>
+        <ul className={MobileMenuStyles}>
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link href={link.href}>{link.name}</Link>
             </li>
           ))}
         </ul>
-        <div className="w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2">
-          <Link href={"/"} className="py-2 w-full text-center">
+        <div className={MobileButtonContainerStyles}>
+          <Link
+            href={"/"}
+            className="py-2 w-full text-center"
+            onClick={onClickFake}
+          >
             Login
           </Link>
           <Link
             href={"/"}
             className="py-2 bg-primary1 w-full text-center rounded-full"
+            onClick={onClickFake}
           >
             Sign Up
           </Link>
         </div>
       </div>
-      <div
-        className={`w-full md:flex justify-between items-center pl-8 hidden`}
-      >
+      <div className={DesktopNavStyles}>
         <ul className="flex flex-row md:gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -72,12 +82,17 @@ const Nav = () => {
           ))}
         </ul>
         <div className="flex gap-4">
-          <Link href={"/"} className="py-2 px-6 text-center">
+          <Link
+            href={"/"}
+            className="py-2 px-6 text-center"
+            onClick={onClickFake}
+          >
             Login
           </Link>
           <Link
             href={"/"}
             className="py-2 px-6 bg-primary1 text-white rounded-full"
+            onClick={onClickFake}
           >
             Sign Up
           </Link>
