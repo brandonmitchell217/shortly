@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import LinkForm from "../components/LinkForm";
 import Hero from "../components/Hero";
 import Statistics from "../components/Statistics";
 import Cta from "../components/Cta";
 import { useRouter } from "next/router";
 import { Shortly } from "../components/Shortly";
+import FormLink from "../components/FormLink";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +36,7 @@ export default function Home() {
       <section>
         <Hero />
         <div className="relative z-10 w-full px-2">
-          <LinkForm onSubmit={onSubmit} />
+          <FormLink onSubmit={onSubmit} />
         </div>
         <div className="relative w-full pt-36 pb-16 -mt-16 bg-neutral-200">
           {data.length > 0 && (
