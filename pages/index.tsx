@@ -1,17 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Hero from "../components/Hero";
 import Statistics from "../components/Statistics";
 import Cta from "../components/Cta";
-import { useRouter } from "next/router";
 import { Shortly } from "../components/Shortly";
 import FormLink from "../components/FormLink";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
-  const router = useRouter();
-  const targetSection = React.useRef(null);
   const [data, setData] = React.useState([]);
   let linkId = 0;
 

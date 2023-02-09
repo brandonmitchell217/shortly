@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Shortly Links</title>
-        <meta name="description" content="Create shorter links" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Shortly - Links Made Easier</title>
+        <meta name="description" content="Create shorter links with Shortly" />
+        <link rel="icon" href="/assets/favicon.png" />
       </Head>
       <Nav />
       <Main>
