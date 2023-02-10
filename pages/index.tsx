@@ -1,6 +1,4 @@
 import React from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Hero from "../components/Hero";
 import Statistics from "../components/Statistics";
 import Cta from "../components/Cta";
@@ -8,7 +6,6 @@ import { Shortly } from "../components/Shortly";
 import FormLink from "../components/FormLink";
 
 export default function Home() {
-  gsap.registerPlugin(ScrollTrigger);
   const [data, setData] = React.useState([]);
   let linkId = 0;
 
