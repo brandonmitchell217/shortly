@@ -9,12 +9,14 @@ import {
 import { Logo } from "./assets/Logo";
 import onClickFake from "../util/FakeClick";
 
-const FooterStyles =
+const FooterStyles: string =
   "bg-neutral4 text-white grid grid-cols-1 lg:grid-cols-3 place-items-center text-center lg:place-items-stretch lg:text-left gap-4 py-12 lg:py-20";
 
-const LinksContainer = "py-8 flex flex-col lg:flex-row lg:py-0 gap-8 lg:gap-20";
+const LinksContainer: string =
+  "py-8 flex flex-col lg:flex-row lg:py-0 gap-8 lg:gap-20";
 
-const LinksList = "flex flex-col gap-4 font-extralight text-md lg:text-base";
+const LinksList: string =
+  "flex flex-col gap-4 font-extralight text-md lg:text-base";
 
 const links: { name: string; links: { name: string; href: string }[] }[] = [
   {

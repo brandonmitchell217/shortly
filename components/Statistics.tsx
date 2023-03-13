@@ -26,16 +26,16 @@ const stats: { title: string; description: string; icon: string }[] = [
   },
 ];
 
-const ContainerStyles = "max-w-6xl m-auto lg:py-12 text-center";
-const HeaderStyles = "px-4 lg:px-0 space-y-3 mb-20";
-const TitleStyles = "text-lg lg:text-title";
-const DescriptionStyles =
+const ContainerStyles: string = "max-w-6xl m-auto lg:py-12 text-center";
+const HeaderStyles: string = "px-4 lg:px-0 space-y-3 mb-20";
+const TitleStyles: string = "text-lg lg:text-title";
+const DescriptionStyles: string =
   "text-md lg:text-base lg:w-1/2 lg:m-auto text-neutral2";
-const DataContainerStyles =
+const DataContainerStyles: string =
   "w-full px-3 flex flex-col md:flex-row gap-16 md:gap-8";
-const StatContainerStyles =
+const StatContainerStyles: string =
   "relative flex flex-col justify-center items-center lg:items-start lg:justify-start lg:text-left gap-6 md:w-1/3 h-64 border pt-16 pb-6 bg-white rounded  shadow-lg lg:shadow-xl";
-const StatImageContainerStyles =
+const StatImageContainerStyles: string =
   "w-20 h-20 bg-primary2 rounded-full absolute -top-10 lg:left-6 flex items-center justify-center";
 const GreenLineStyles =
   "absolute -bottom-12 left-1/2 -translate-x-1/2 z-0 bg-primary1 w-2 h-12 md:h-2 md:w-12 md:bottom-1/2 md:-translate-y-1/2 md:translate-x-0 md:left-full";

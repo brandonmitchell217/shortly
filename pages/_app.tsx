@@ -1,10 +1,11 @@
+import { AppProps } from "next/app";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { Main } from "../layouts/Main";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>

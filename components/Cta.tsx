@@ -12,9 +12,9 @@ const ctaText: CtaProps = {
   title: "Boost your links today",
   cta: "Get Started",
 };
-const ContainerStyles =
+const ContainerStyles: string =
   "w-full py-16 flex justify-center bg-primary2 bg-boostMobile bg-no-repeat bg-cover md:bg-boostDesktop text-white";
-const InnerStyles =
+const InnerStyles: string =
   "max-w-6xl m-auto flex flex-col items-center gap-3 lg:gap-6";
 
 const Cta = () => {

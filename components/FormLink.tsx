@@ -8,13 +8,10 @@ const LinkText: { placeholder: string; button: string } = {
   button: "Shorten it!",
 };
 
-const FormStyles =
+const FormStyles: string =
   "relative max-w-6xl m-auto flex flex-col gap-6 p-6 rounded-xl bg-primary2 bg-shortMobile bg-no-repeat bg-right-top md:flex-row md:p-12 md:bg-shortDesktop md:bg-cover";
 
-const InputStyles = "p-3 rounded-md text-sm  lg:text-base w-full";
-
-const ButtonStyles =
-  "py-2 md:px-8 bg-primary1 text-white rounded-md text-md lg:text-lg";
+const InputStyles: string = "p-3 rounded-md text-sm  lg:text-base w-full";
 
 const FormLink = ({ onSubmit }) => {
   const formik = useFormik({

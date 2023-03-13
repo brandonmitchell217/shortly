@@ -6,23 +6,24 @@ interface ShortlyProps {
   short_link: string;
 }
 
-const ContainerStyles =
+const ContainerStyles: string =
   "py-4 flex flex-col lg:flex-row gap-4 items-center justify-between bg-white rounded-lg";
 
-const TitleContainerStyles = "max-w-full lg:flex-1 px-4";
+const TitleContainerStyles: string = "max-w-full lg:flex-1 px-4";
 
-const TitleStyles = "text-md lg:text-base truncate text-ellipsis";
+const TitleStyles: string =
+  "text-md lg:text-base line-clamp text-ellipsis leading-5";
 
-const LinkContainerStyles =
+const LinkContainerStyles: string =
   "w-full py-4 lg:w-auto border-t border-neutral1 lg:border-none";
 
-const LinkInnerContainerStyles =
+const LinkInnerContainerStyles: string =
   "w-full px-4 flex flex-col lg:flex-row items-center gap-4";
 
 export const Shortly = ({ original_link, short_link }: ShortlyProps) => {
-  const [copy, setCopy] = React.useState(false);
+  const [copy, setCopy] = React.useState<boolean>(false);
 
-  const ButtonStyles = `w-full py-2 px-8 text-white rounded-md ${
+  const ButtonStyles: string = `w-full py-2 px-8 text-white rounded-md ${
     copy ? "bg-primary2" : "bg-primary1"
   }`;
 

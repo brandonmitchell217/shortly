@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "formik": "^2.2.9",
     "gsap": "^3.11.4",
     "next": "13.1.1",

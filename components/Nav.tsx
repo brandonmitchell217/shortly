@@ -6,18 +6,19 @@ import { Logo } from "./assets/Logo";
 import onClickFake from "../util/FakeClick";
 import { Button } from "./Button";
 
-const NavStyles =
+const NavStyles: string =
   "relative z-50 py-8 px-4 w-full max-w-6xl m-auto flex justify-between items-center";
-const MobileNavStyles =
+const MobileNavStyles: string =
   "absolute -bottom-[365px] left-1/2 -translate-x-1/2 w-11/12 py-8 px-6 bg-primary2 text-white rounded-xl flex flex-col items-center gap-8";
-const DesktopNavStyles =
+const DesktopNavStyles: string =
   "w-full md:flex justify-between items-center pl-8 hidden";
-const MobileMenuStyles = "flex flex-col gap-8 md:flex-row md:gap-4 text-center";
-const MobileButtonContainerStyles =
+const MobileMenuStyles: string =
+  "flex flex-col gap-8 md:flex-row md:gap-4 text-center";
+const MobileButtonContainerStyles: string =
   "w-full pt-8 flex flex-col items-center gap-4 justify-evenly border-t border-neutral2";
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   useIsomorphicLayoutEffect(() => {
     const handleResize = () => {
