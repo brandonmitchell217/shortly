@@ -37,7 +37,7 @@ const Hero = () => {
       <div className={ImageContainerStyles}>
         <Image
           src={"/assets/illustration-working.svg"}
-          alt="SVG animation of a dude doing some work"
+          alt="SVG image of a person doing some work"
           className={ImageStyles}
           width={700}
           height={700}
