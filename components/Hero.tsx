@@ -37,10 +37,12 @@ const Hero = () => {
       <div className={ImageContainerStyles}>
         <Image
           src={"/assets/illustration-working.svg"}
-          alt="SVG image of a dude doing some work"
+          alt="SVG animation of a dude doing some work"
           className={ImageStyles}
           width={700}
           height={700}
+          placeholder="blur"
+          blurDataURL={"/assets/illustration-working.svg"}
         />
       </div>
       <div className={TextContainerStyles}>

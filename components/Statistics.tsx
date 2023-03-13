@@ -56,7 +56,14 @@ const Statistics = () => {
             }`}
           >
             <div className={StatImageContainerStyles}>
-              <Image src={stat.icon} alt={stat.title} height={45} width={45} />
+              <Image
+                src={stat.icon}
+                alt={stat.title}
+                height={45}
+                width={45}
+                placeholder="blur"
+                blurDataURL={stat.icon}
+              />
             </div>
             <div className="space-y-4 px-4">
               <h3 className="lg:text-lg">{stat.title}</h3>
